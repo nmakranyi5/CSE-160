@@ -95,4 +95,13 @@ function handleDrawOperationEvent() {
     drawVector(v3, "green");
     drawVector(v4, "green");
   }
+  else if(operation === "angleBetween")
+  {
+    let mag1 = v1.magnitude();
+    let mag2 = v2.magnitude();
+    let dot = Vector3.dot(v1, v2)
+    let cos = dot / (mag1 * mag2);
+    let angle = Math.acos(cos) * 180 / Math.PI;
+    console.log("Angle: " + angle);
+  }
 }
