@@ -76,10 +76,22 @@ function handleDrawOperationEvent() {
     drawVector(v3, "green");
     drawVector(v4, "green");
   }
-  else if (operation === "div")
-  {
+  else if (operation === "div") {
     v3.div(scalar);
     v4.div(scalar);
+    drawVector(v3, "green");
+    drawVector(v4, "green");
+  }
+  else if (operation === "magnitude") {
+    let m1 = v1.magnitude();
+    let m2 = v2.magnitude();
+    console.log("Magnitude v1: " + m1);
+    console.log("Magnitude v2: " + m2);
+  }
+  else if(operation === "normalize")
+  {
+    v3.normalize();
+    v4.normalize();
     drawVector(v3, "green");
     drawVector(v4, "green");
   }
