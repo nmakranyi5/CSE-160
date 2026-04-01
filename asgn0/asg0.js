@@ -43,6 +43,12 @@ function handleDrawEvent() {
   drawVector(v2, "blue");
 }
 
+function areaTriangle(v1, v2) {
+  let cross = Vector3.cross(v1, v2);
+  let area = 0.5 * cross.magnitude();
+  return area;
+}
+
 function handleDrawOperationEvent() {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // clearing canvas
   ctx.fillStyle = "black";
@@ -103,5 +109,10 @@ function handleDrawOperationEvent() {
     let cos = dot / (mag1 * mag2);
     let angle = Math.acos(cos) * 180 / Math.PI;
     console.log("Angle: " + angle);
+  }
+  else if(operation === "area")
+  {
+    let area = areaTriangle(v1, v2);
+    console.log("Area of the triangle: " + area);
   }
 }
