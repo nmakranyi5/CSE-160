@@ -32,8 +32,13 @@ function handleDrawEvent() {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // clearing canvas
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  let x = document.getElementById("x").value;
-  let y = document.getElementById("y").value;
-  const v1 = new Vector3([parseFloat(x), parseFloat(y), 0]);
+  let x1 = document.getElementById("x1").value;
+  let y1 = document.getElementById("y1").value;
+  const v1 = new Vector3([parseFloat(x1), parseFloat(y1), 0]);
   drawVector(v1, "red");
+
+  let x2 = document.getElementById("x2").value;
+  let y2 = document.getElementById("y2").value;
+  const v2 = new Vector3([parseFloat(x2), parseFloat(y2), 0]);
+  drawVector(v2, "blue");
 }
