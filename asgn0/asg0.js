@@ -27,3 +27,13 @@ function drawVector(v, color) {
   ctx.strokeStyle = color;
   ctx.stroke();
 }
+
+function handleDrawEvent() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // clearing canvas
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  let x = document.getElementById("x").value;
+  let y = document.getElementById("y").value;
+  const v1 = new Vector3([parseFloat(x), parseFloat(y), 0]);
+  drawVector(v1, "red");
+}
